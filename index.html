@@ -1698,7 +1698,8 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/xblpkaaa"
+                    method="POST">
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" class="form-control" required>
@@ -1897,17 +1898,7 @@
         // Form submission with CAPTCHA verification
         const contactForm = document.getElementById('contactForm');
         
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // In a real application, you would verify the reCAPTCHA response with your server
-            // For this demo, we'll assume it's valid and show an alert
-            alert(`Merci pour votre message! Nous vous répondrons dans les plus brefs délais.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-
+        
         // Animation on scroll
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.value-card, .event-card, .registration-option, .video-card, .team-member');
