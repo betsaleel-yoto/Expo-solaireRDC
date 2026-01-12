@@ -922,6 +922,126 @@
             margin-right: 10px;
         }
 
+        /* Partenaires Section */
+        .partners {
+            background-color: var(--white);
+            padding: 100px 0;
+        }
+
+        .partners-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .partners-slider-container {
+            position: relative;
+            margin: 50px 0;
+            padding: 0 40px;
+            overflow: hidden;
+        }
+
+        .partners-slider-track {
+            display: flex;
+            gap: 40px;
+            transition: transform 0.5s ease;
+            padding: 20px 0;
+        }
+
+        .partner-logo {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 120px;
+            background-color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--amber);
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 2px solid var(--blue-steel);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            pointer-events: all;
+            box-shadow: var(--shadow);
+        }
+
+        .slider-btn:hover {
+            background-color: var(--blue-steel);
+            transform: scale(1.1);
+        }
+
+        .slider-btn:hover svg path {
+            stroke: var(--white);
+        }
+
+        .become-partner {
+            text-align: center;
+            margin-top: 70px;
+            padding: 40px;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            border-left: 4px solid var(--amber);
+        }
+
+        .become-partner h3 {
+            color: var(--blue-steel);
+            margin-bottom: 15px;
+        }
+
+        .become-partner p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: #555;
+        }
+
         /* Contact Section */
         .contact {
             background-color: var(--white);
@@ -1162,6 +1282,10 @@
             .hero h1 {
                 font-size: 2.8rem;
             }
+            
+            .partners-slider-container {
+                padding: 0 30px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1228,6 +1352,29 @@
             section {
                 padding: 70px 0;
             }
+            
+            .partners-slider-container {
+                padding: 0 20px;
+            }
+            
+            .partner-logo {
+                width: 180px;
+                height: 100px;
+            }
+            
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .slider-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .become-partner {
+                padding: 30px 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1245,6 +1392,19 @@
 
             .value-card, .registration-option {
                 padding: 20px;
+            }
+            
+            .partners-slider-container {
+                padding: 0 10px;
+            }
+            
+            .partner-logo {
+                width: 150px;
+                height: 80px;
+            }
+            
+            .become-partner {
+                padding: 25px 15px;
             }
         }
     </style>
@@ -1600,6 +1760,66 @@
         </div>
     </section>
 
+    <!-- Partenaires Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Partenaires</h2>
+            </div>
+            <div class="partners-content">
+                <p class="partners-intro">EXPO SOLAIRE RDC travaille avec des partenaires de renom pour promouvoir l'énergie solaire en République Démocratique du Congo. Nous remercions nos partenaires pour leur soutien et leur engagement.</p>
+                
+                <div class="partners-slider-container">
+                    <div class="partners-slider-track" id="partnersTrack">
+                        <!-- Logos des partenaires - Remplacer par les vrais logos -->
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/3A8EBA/FFFFFF?text=PARTENAIRE+1" alt="Partenaire 1">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/F9A701/FFFFFF?text=PARTENAIRE+2" alt="Partenaire 2">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/FD6A05/FFFFFF?text=PARTENAIRE+3" alt="Partenaire 3">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/2A5D7A/FFFFFF?text=PARTENAIRE+4" alt="Partenaire 4">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/3A8EBA/FFFFFF?text=PARTENAIRE+5" alt="Partenaire 5">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/F9A701/FFFFFF?text=PARTENAIRE+6" alt="Partenaire 6">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/FD6A05/FFFFFF?text=PARTENAIRE+7" alt="Partenaire 7">
+                        </div>
+                        <div class="partner-logo">
+                            <img src="https://via.placeholder.com/200x100/2A5D7A/FFFFFF?text=PARTENAIRE+8" alt="Partenaire 8">
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" id="prevBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="#3A8EBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="slider-btn next-btn" id="nextBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="#3A8EBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="become-partner">
+                    <h3>Devenir Partenaire</h3>
+                    <p>Vous souhaitez devenir partenaire d'EXPO SOLAIRE RDC et soutenir le développement de l'énergie solaire en RDC ?</p>
+                    <a href="#contact" class="btn btn-primary">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1768,6 +1988,7 @@
                         <li><a href="#registration">Inscription</a></li>
                         <li><a href="#videos">Vidéos</a></li>
                         <li><a href="#entrepreneurs">Entrepreneurs</a></li>
+                        <li><a href="#partners">Partenaires</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1866,6 +2087,46 @@
             showSlide(nextSlide);
         }, 5000);
 
+        // Partenaires Slider
+        const partnersTrack = document.getElementById('partnersTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const partnerLogos = document.querySelectorAll('.partner-logo');
+        let partnerPosition = 0;
+        const partnerWidth = 240; // 200px + 40px de gap
+
+        function movePartnerSlider(direction) {
+            const trackWidth = partnersTrack.scrollWidth;
+            const containerWidth = partnersTrack.parentElement.clientWidth;
+            const maxPosition = trackWidth - containerWidth;
+            
+            partnerPosition += direction * partnerWidth * 2;
+            
+            // Limiter le défilement
+            partnerPosition = Math.max(0, Math.min(partnerPosition, maxPosition));
+            
+            partnersTrack.style.transform = `translateX(-${partnerPosition}px)`;
+        }
+
+        prevBtn.addEventListener('click', () => movePartnerSlider(-1));
+        nextBtn.addEventListener('click', () => movePartnerSlider(1));
+
+        // Auto-slide pour les partenaires
+        let partnerAutoSlide = setInterval(() => {
+            movePartnerSlider(1);
+        }, 4000);
+
+        // Arrêter l'auto-slide au survol
+        partnersTrack.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(partnerAutoSlide);
+        });
+
+        partnersTrack.parentElement.addEventListener('mouseleave', () => {
+            partnerAutoSlide = setInterval(() => {
+                movePartnerSlider(1);
+            }, 4000);
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1894,7 +2155,7 @@
         
         // Animation on scroll
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.value-card, .event-card, .registration-option, .video-card, .team-member');
+            const elements = document.querySelectorAll('.value-card, .event-card, .registration-option, .video-card, .team-member, .partner-logo');
             
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -1908,7 +2169,7 @@
         };
 
         // Initialize elements for animation
-        document.querySelectorAll('.value-card, .event-card, .registration-option, .video-card, .team-member').forEach(element => {
+        document.querySelectorAll('.value-card, .event-card, .registration-option, .video-card, .team-member, .partner-logo').forEach(element => {
             element.style.opacity = "0";
             element.style.transform = "translateY(20px)";
             element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
